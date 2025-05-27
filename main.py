@@ -1,9 +1,4 @@
-def num_of_words(text):
-    words = text.split()
-    cnt = 0
-    for word in words:
-        cnt += 1
-    print(f'{cnt} words found in the document')
+from stats import num_of_words, get_duplicates
 
 def get_book_text(path):
     with open(path) as f:
@@ -12,7 +7,9 @@ def get_book_text(path):
 def main():
     franken_path = './books/frankenstein.txt'
     franken_text = get_book_text(franken_path)
+    franken_duplicates = get_duplicates(franken_text)
     print(franken_text)
     num_of_words(franken_text)
+    print(franken_duplicates)
 
 main()
